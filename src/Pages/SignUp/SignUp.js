@@ -36,7 +36,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="name" name='name' className="input input-bordered" />
+                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -48,11 +48,11 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn rounded-md btn-info" type="submit" value="Sign Up" />
+                            <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
