@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const CheckOut = () => {
     const { title, _id, price } = useLoaderData()
     const { user } = useContext(AuthContext)
+    console.log(user)
 
     const handlePlaceOrder = event => {
         event.preventDefault()
@@ -55,7 +56,7 @@ const CheckOut = () => {
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
                     <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
                     <input name="phone" type="text" placeholder="Your Phone" className="input input-ghost w-full  input-bordered" required />
-                    <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" />
+                    <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your msg" required></textarea>
                 <input className='btn btn-outline btn-info rounded-lg' type="submit" value="Place your order" />
