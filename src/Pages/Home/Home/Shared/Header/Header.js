@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import logo from '../../../../../assets/logo.svg'
 import { AuthContext } from '../../../../../context/AuthProvider/AuthProvider';
 
@@ -10,6 +11,7 @@ const Header = () => {
         logOut()
             .then()
             .catch()
+        toast.warning('signOut successfully', { autoClose: 500 })
     }
 
     const menuItems = <>

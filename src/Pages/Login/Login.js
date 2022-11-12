@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import img from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import SocialLogin from '../Home/Home/Shared/SocialLogin/SocialLogin';
@@ -21,7 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 form.reset()
-
+                toast.success('Login successfully', { autoClose: 1000 })
                 const currentUser = {
                     email: user.email
                 }

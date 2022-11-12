@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const CheckOut = () => {
     const { title, _id, price } = useLoaderData()
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
     console.log(user)
+
+    if (loading) {
+        return <div className='flex justify-center m-10'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        </div>
+    }
 
     const handlePlaceOrder = event => {
         event.preventDefault()
@@ -38,7 +45,7 @@ const CheckOut = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('order placed successfully')
+                    toast.success('order placed successfully', { autoClose: 1000 })
                     form.reset()
                 }
             })
