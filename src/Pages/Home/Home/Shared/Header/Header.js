@@ -27,6 +27,12 @@ const Header = () => {
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
         }
+        {user?.photoURL ?
+            <img className=' w-12 h-12 rounded-full dark:bg-gray-500'
+                src={user?.photoURL} alt=""></img>
+            :
+            <></>
+        }
     </>
 
     return (
